@@ -10,17 +10,24 @@ class App extends Component {
     super()
 
     this.state = {
-      isClicked: false
+      isClicked: true
     }
   }
+
+  handleClick = () => {
+    this.state.isClicked ?
+      this.setState({ isClicked: false }) :
+      this.setState({isClicked : true })
+}
 
   render() {
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
+          <button onClick={this.handleClick}>Click Me</button>
           <p>
-            Cag's
+            {this.stateisClicked ? "true" : "false"}
           </p>
           <a className="App-link" 
             href="https://reactjs.org"
