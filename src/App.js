@@ -6,8 +6,8 @@ import './App.css';
 
 
 class App extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
 
     this.state = {
       isClicked: true
@@ -27,13 +27,15 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <button onClick={this.handleClick}>Click Me</button>
           <p>
-            {this.stateisClicked ? "true" : "false"}
+            {this.state.isClicked ? "true" : "false"}
           </p>
           <a className="App-link" 
             href="https://reactjs.org"
             target="_blank"
             rel="noopener noreferrer"
-          ></a>
+          >
+            {this.props.name}
+          </a>
         </header>
       </div>
   )
